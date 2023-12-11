@@ -1,6 +1,9 @@
 .PHONY: test
 
-up:
+setup:
+	rails db:create db:migrate db:seed
+
+start:
 	./bin/dev
 
 test:
@@ -16,3 +19,6 @@ linter-code-fix:
 
 db-reset:
 	rails db:migrate:reset
+
+update-exchange-rates:
+	whenever --update-crontab

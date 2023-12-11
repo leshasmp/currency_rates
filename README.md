@@ -1,24 +1,20 @@
-# README
+# Currency rates
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
+A ready-made chart for tracking exchange rates from https://www.cbr.ru/
 
-Things you may want to cover:
+## System requirements
 
-* Ruby version
+* Ruby >= 3.2.2
+* Node.js >= 20.9.0
+* PostgreSQL
 
-* System dependencies
+## Setup
 
-* Configuration
+```sh
+make setup # will create exchange rates for the last month
 
-* Database creation
+make start # run server http://localhost:3000
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+make update-exchange-rates # save exchange rates every day according to schedule
+```
