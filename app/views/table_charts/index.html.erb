@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table my-5">
+    <thead>
+      <tr>
+        <th scope="col">Валюта</th>
+        <th scope="col">4 недели назад</th>
+        <th scope="col">3 недели назад</th>
+        <th scope="col">позапрошлая неделя</th>
+        <th scope="col">прошлая неделя</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @grouped_rates.each do |kind, rates| %>
+        <tr>
+          <td><%= kind %></td>
+          <% rates.each do |rate, index| %>
+            <td data-date="<%= rate.date %>"><%= rate.value.to_i %>₽(<%= rate.percentage_increase %>%)</td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Главная", root_path, class: "btn btn-link" %>
+</div>

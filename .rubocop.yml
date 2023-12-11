@@ -1,0 +1,64 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.2.2
+  TargetRailsVersion: 7.0.1
+  NewCops: enable
+  Exclude:
+    - 'bin/**'
+    - 'db/schema.rb'
+    - 'db/migrate/**'
+    - 'vendor/**/*'
+    - 'public/**/*'
+    - 'app/controllers/users/unlocks_controller.rb'
+
+Bundler:
+  Enabled: true
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'config/initializers/devise.rb'
+
+Metrics/ClassLength:
+  Max: 150
+
+Layout/LineLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 25
+
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 10
+
+Metrics/AbcSize:
+  Max: 20
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  AllowedMethods: [change]
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false

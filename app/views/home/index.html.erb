@@ -1,0 +1,10 @@
+<div class="container">
+  <div id="chart"></div>
+  <%= link_to "График в виде таблицы", table_charts_path, class: "btn btn-link" %>
+</div>
+<div id="chart-data" class="custom-block"
+     data-date-rates="<%= @date_rates.map { |date| date.to_s }.to_json %>"
+     data-grouped-rates-usd="<%= @grouped_rates['USD'].map { |rate| rate.value.to_i }.to_json %>"
+     data-grouped-rates-eur="<%= @grouped_rates['EUR'].map { |rate| rate.value.to_i }.to_json %>"
+     data-grouped-rates-cny="<%= @grouped_rates['CNY'].map { |rate| rate.value.to_i }.to_json %>">
+</div>
