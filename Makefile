@@ -1,6 +1,7 @@
 .PHONY: test
 
 setup:
+	npm ci
 	rails db:create db:migrate db:seed
 
 start:
