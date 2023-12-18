@@ -1,8 +1,8 @@
 .PHONY: test
 
 setup:
+	bin/setup
 	npm ci
-	rails db:create db:migrate db:seed
 
 start:
 	./bin/dev
@@ -19,7 +19,7 @@ linter-code-fix:
 	bundle exec rubocop -A
 
 db-reset:
-	rails db:migrate:reset
+	bin/rails db:reset
 
 update-exchange-rates:
 	whenever --update-crontab
